@@ -1,4 +1,4 @@
-package ie.atu.cicd_lab4;
+package ie.atu.cicd_lab5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

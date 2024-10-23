@@ -1,4 +1,4 @@
-package ie.atu.cicd_lab4;
+package ie.atu.cicd_lab5;
 
 import org.springframework.stereotype.Service;
 
