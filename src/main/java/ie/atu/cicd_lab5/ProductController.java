@@ -26,26 +26,15 @@ public class ProductController {
         return myProduct.addProduct(product);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<List> editProduct(@Valid @PathVariable int id, @RequestBody Product product) {
-        int num = (int) id;
-
-        for (int count = 0; count < myList.size(); count++) {
-            if (myList.get(count).getId() == num)
-                myList.set(count, product);
-        }
-        return ResponseEntity.ok(myList);
+    @PutMapping("/editProduct/{id}")
+    public List<Product> editProduct(@Valid @RequestBody Product product, @PathVariable int id)
+    {
+        return myProduct.editProduct(product, id);
     }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<List> deletedProduct(@Valid @PathVariable long id){
-        int num = (int) id;
-
-        for (int count = 0; count < myList.size(); count++)
-        {
-            if(myList.get(count).getId() == num)
-                myList.remove(count);
-        }
-        return ResponseEntity.ok(myList);
+    @DeleteMapping("/deleteProduct/{id}")
+    public List<Product> deletedProduct(@Valid @PathVariable int id)
+    {
+        return myProduct.deleteProduct(id);
     }
 
 
